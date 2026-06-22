@@ -204,7 +204,7 @@ async function getLaunchData() {
     if (launchImageContainer) launchImageContainer.innerHTML = loaderHtml;
 
     var res = await fetch(
-      "https://lldev.thespacedevs.com/2.3.0/launches/upcoming/?limit=10",
+      "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?limit=10&",
     );
 
     if (!res.ok) throw new Error("Error at collecting data");
