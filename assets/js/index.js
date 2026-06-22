@@ -337,7 +337,7 @@ function addLaunchDetails(allLaunchesData) {
   locationCountry.innerHTML = allLaunchesData[0].pad.country.name;
   launchDescription.innerHTML = allLaunchesData[0].mission.description;
 
-  if (allLaunchesData[0].status.abbrev.includes("Go")) {
+  if (allLaunchesData[0].status.abbrev.includes("Go") || allLaunchesData[0].status.abbrev.includes("Success")) {
     launchStatus.classList.add("text-green-400");
     launchStatus.classList.remove("text-yellow-400");
   } else {
@@ -397,7 +397,6 @@ async function getTodayData(chossenDate = "") {
     var res = await fetch(url);
 
     res = await res.json();
-    console.log(res);
     displayTodayData(res);
   } catch (error) {
     console.log(error);
