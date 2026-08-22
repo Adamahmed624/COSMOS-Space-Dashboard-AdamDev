@@ -363,8 +363,6 @@ var apodCopyright = document.querySelector("#apod-copyright")
 var apodDateInfo = document.querySelector("#apod-date-info")
 var todayApodBtn = document.querySelector("#today-apod-btn")
 
-var API_KEY = "fhncl3LWWlPL3M4yMoaP1ge3rw183crwGHBxeZse"
-
 async function getTodayData(chossenDate = "") {
   try {
     todayDateElement.innerHTML = "Loading...";
@@ -388,10 +386,10 @@ async function getTodayData(chossenDate = "") {
     apodDateInfo.innerHTML = "Loading..."
     apodCopyright.innerHTML = ""
 
-    var url =`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
+    var url = "/api/apod"
 
     if(chossenDate){
-      url+=`&date=${chossenDate}`
+      url += `?date=${chossenDate}`
     }
     
     var res = await fetch(url);
